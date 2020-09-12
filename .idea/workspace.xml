@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03d6cabd-cd1f-4127-aca1-5b58f36c29ce" name="Default Changelist" comment="prueba.">
+    <list default="true" id="03d6cabd-cd1f-4127-aca1-5b58f36c29ce" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/functions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/martians.js" beforeDir="false" afterPath="$PROJECT_DIR$/martians.js" afterDir="false" />
     </list>
@@ -45,7 +46,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599749010812</updated>
       <workItem from="1599749012438" duration="1957000" />
-      <workItem from="1599924560547" duration="5000" />
+      <workItem from="1599924560547" duration="3274000" />
     </task>
     <task id="LOCAL-00001" summary="prueba">
       <created>1599749417738</created>
@@ -75,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599750049345</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="primeras normas">
+      <created>1599924589935</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1599924589935</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,13 +92,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prueba" />
     <MESSAGE value="prueba." />
-    <option name="LAST_COMMIT_MESSAGE" value="prueba." />
+    <MESSAGE value="primeras normas" />
+    <option name="LAST_COMMIT_MESSAGE" value="primeras normas" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1003" y="165" key="CommitChangelistDialog2" timestamp="1599757728238">
+    <state x="849" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599926180864">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="849" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1599926180864" />
+    <state x="1003" y="165" key="CommitChangelistDialog2" timestamp="1599924589719">
       <screen x="0" y="23" width="1920" height="991" />
     </state>
-    <state x="1003" y="165" key="CommitChangelistDialog2/0.23.1920.991@0.23.1920.991" timestamp="1599757728238" />
+    <state x="1003" y="165" key="CommitChangelistDialog2/0.23.1920.991@0.23.1920.991" timestamp="1599924589719" />
     <state x="1262" y="226" key="RollbackChangesDialog" timestamp="1599757756053">
       <screen x="0" y="23" width="1920" height="991" />
     </state>
