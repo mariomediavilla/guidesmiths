@@ -29,6 +29,7 @@ robotData = [coordX, coordY, orientation]
 function movement() {
     var angleRobot;
     var scentArray;
+    var lost = false;
     if (robotData[2] == 'N') {
         angleRobot = 0;
 
@@ -42,16 +43,22 @@ function movement() {
 
     for (var i = 0; i < instructions.length; i++) {
         if (instructions.charAt(i) == 'F') {
-            if (robotData[2] == 'N') {
+            if (robotData[2] == 'N' && verifyScentCoordinates(robotData[0],robotData[1]+1, scentArray)) {
                 robotData[1]++;
 
-            } else if (robotData[2] == 'S') {
+
+            } else if (robotData[2] == 'S' && verifyScentCoordinates(robotData[0],robotData[1]-1, scentArray)) {
                 robotData[1]--;
 
-            } else if (robotData[2] == 'E') {
+
+            } else if (robotData[2] == 'E' && verifyScentCoordinates(robotData[0]+1,robotData[1], scentArray)) {
                 robotData[0]++;
 
-            } else robotData[0]--;
+
+            } else {
+
+                if (verifyScentCoordinates(robotData[0]-1,robotData[1], scentArray)) robotData[0]--;;
+            }
 
         } else if (instructions.charAt(i) == 'R') {
             angleRobot = angleRobot + 90;
@@ -73,13 +80,14 @@ function movement() {
         } else robotData[2] = 'W';
 
         if (robotData[0] > gridLimits[0] || robotData[1] > gridLimits[1] || robotData[0] < 0 || robotData[1] < 0) {
-            scentCount = 0;
-            scentCoordinate(robotData[0], robotData[1], scentArray)
-            scentCount++;
-            print("Krrrzzzzt...OOH NOO!..Krzzzzzzzztzzzz...");
+            scentArray = scentCoordinate(robotData[0], robotData[1], scentArray);
+            print( "X:" + robotData[0] + "Y: " + robotData[1] + "Orientation: " + robotData[2] + "Krrrzzzzt...OOH NOO!..Krzzzzzzzztzzzz...\n LOST\n");
+            lost = true;
             break;
         }
     }
+    if (!lost) print( "X:" + robotData[0] + "Y: " + robotData[1]);
+
 }
 
 
