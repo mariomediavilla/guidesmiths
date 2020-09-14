@@ -5,10 +5,10 @@ robotData = new Array(3)
 instructions = new String(100)
 var scentedGrid = new Array()
 var lost = false;
-scentedGrid = [3,4]
-instructions = 'LLFFFLFLFL'.split('');
+scentedGrid = []
+instructions = 'FRRFLLFFRRFLL'.split('');
 gridLimits = [5,3];
-var robotData = [0, 3, 'W']
+var robotData = [3, 2, 'N']
 
 function scentedCoordinates(x, y, array) {
     array.push(x);
@@ -28,12 +28,8 @@ function verifyIfOutOfBounds(positionX, positionY, gridLimits) {
     if(positionX > gridLimits[0] || positionY > gridLimits[1] || positionX < 0 || positionY < 0){
         if(verifyScentedCoordinates(positionX,positionY,scentedGrid)){
             scentedCoordinates(positionX, positionY, scentedGrid);
-        }
-        console.log(`Esencia de robots:${scentedGrid}`)
-        robotData[0] = positionX;
-        robotData[1] = positionY;
-
-        lost = true;
+            lost = true;
+        }else lost = false;
     }
 
     return positionX > gridLimits[0] || positionY > gridLimits[1] || positionX < 0 || positionY < 0;
@@ -41,7 +37,7 @@ function verifyIfOutOfBounds(positionX, positionY, gridLimits) {
 
 
 const directionsToAngle = {
-    N: 0, // ¿¿¿N o 'N'???
+    N: 0,
     E: 90,
     S: 180,
     W: 270
@@ -50,44 +46,36 @@ const anglesToDirection = {
     0: 'N',
     90: 'E',
     180: 'S',
-    270: 'W'
+    270: 'W',
 }
 
 function computeRobot(robotData, instructions, gridLimits) {
     let angleRobot = directionsToAngle[robotData[2]];
     let scentArray = new Array();
-    //let lost = false;
 
-    console.log(`Inicio en ${robotData}`);
     for (let i = 0; i < instructions.length; i++) {
         let scentFinded = false;
 
         if (instructions[i] === 'F') {
             if (robotData[2] === 'N' && !verifyIfOutOfBounds(robotData[0],robotData[1]+1, gridLimits) && verifyScentedCoordinates(robotData[0],robotData[1]+1, scentedGrid)) {
                 robotData[1]++;
-                //console.log("F111");
 
 
-                //console.log(`X:  ${robotData[0]}  Y:   ${robotData[1]+1} Orientation:  ${robotData[2]} Krrrzzzzt...OOH NOO!..Krzzzzzzzztzzzz...\\n LOST\\n`);
 
             } else if (robotData[2] === 'S' && !verifyIfOutOfBounds(robotData[0],robotData[1]-1, gridLimits)  && verifyScentedCoordinates(robotData[0],robotData[1]-1, scentedGrid)) {
                 robotData[1]--;
-                //console.log("F222");
 
 
             } else if (robotData[2] === 'E' && !verifyIfOutOfBounds(robotData[0]+1,robotData[1], gridLimits)  && verifyScentedCoordinates(robotData[0]+1,robotData[1], scentedGrid)) {
                 robotData[0]++;
-                //console.log("F333");
 
 
             } else if(robotData[2] === 'W' && !verifyIfOutOfBounds(robotData[0]-1,robotData[1], gridLimits)  && verifyScentedCoordinates(robotData[0]-1,robotData[1], scentedGrid)) {
 
-                    console.log("RESTO X");
                     robotData[0]--;
                 }
             else{
                 scentFinded = true;
-                console.log("ROBOT PERDIDO AQUI, NO AVANZAR\n");
             }
 
 
@@ -99,29 +87,20 @@ function computeRobot(robotData, instructions, gridLimits) {
 
         if (angleRobot === 360 || angleRobot === -360) angleRobot = 0;
 
-        robotData[2] = anglesToDirection[Math.abs(angleRobot)]
+        if(angleRobot<0) angleRobot= angleRobot+360;
+        robotData[2] = anglesToDirection[angleRobot]
 
         if (lost){
-            //console.log(`X:  ${robotData[0]}  Y:   ${robotData[1]} Orientation:  ${robotData[2]} Krrrzzzzt...OOH NOO!..Krzzzzzzzztzzzz...\\n LOST\\n`);
-            return robotData;
-
-        }
-        //console.log(`Lost = ${lost}`);
-        if (!scentFinded) console.log(`Despues de ${instructions[i]} me quedo en: ${robotData} \n`);
-
-
-        if (lost){
-            console.log(`Caemos`);
-
+            console.log(`${robotData} LOST`);
             return robotData;
         }
+
     }
-    if (!lost) //console.log(`X:  ${robotData[0]}  Y:   ${robotData[1]}  Orientation:  ${robotData[2]}`);
+    console.log(`${robotData}`)
+    if (!lost)
     return robotData;
 
 }
 const lastPosition =  computeRobot(robotData,instructions,gridLimits);
-console.log(`${robotData}`);
-if(lost) console.log('LOST')
 
 
