@@ -1,32 +1,37 @@
 
 
-var scentedGrid = [[3,4]]
-instructions = 'LLFFFLFLFL'.split('');
+var scentedGrid = [[]]
+instructions = 'RFRFRFRF'.split('');
 gridLimits = [5,3];
-var robotData = [0, 3, 'W']
+var robotData = [1, 1, 'E']
 
-function scentedCoordinates(x, y, array) {
+function setRobotLostInCoordinates(x, y, array) {
     array.push([x, y]);
 }
 
-function verifyScentedCoordinates(x,y, array){
+function verifyIfRobotLostInCoordinates(x,y, array){
+    console.log("1")
     for (let j = 0; j < array.length; j++){
-        if(array[j][0] == x && array[j][1] == y)
-            return false;
+        console.log(array[j], x, y)
+        if(array[j][0] == x && array[j][1] == y) {
+            console.log("aquiii")
+
+            return true;
+        }
     }
-    return true;
+    return false;
 }
 
 function verifyIfOutOfBounds(positionX, positionY, gridLimits) {
     const isOutOfBounds = positionX > gridLimits[0] || positionY > gridLimits[1] || positionX < 0 || positionY < 0;
+    const isRobotLostInThisCoordinates = verifyIfRobotLostInCoordinates(positionX, positionY, scentedGrid)
 
-    if(isOutOfBounds){
-        if(verifyScentedCoordinates(positionX,positionY, scentedGrid)){
-            scentedCoordinates(positionX, positionY, scentedGrid);
-        }
+    if(isOutOfBounds && !isRobotLostInThisCoordinates){
+            setRobotLostInCoordinates(positionX, positionY, scentedGrid);
     }
     return isOutOfBounds;
 }
+
 
 
 const directionsToAngle = {
@@ -60,21 +65,23 @@ function computeRobot(robotData, instructions, gridLimits) {
     let lost = false;
 
     for (let i = 0; i < instructions.length; i++) {
+        console.log(instructions[i])
+
         if (instructions[i] === 'F') {
-            if (robotData[2] === 'N' && !verifyIfOutOfBounds(robotData[0],robotData[1]+1, gridLimits) && verifyScentedCoordinates(robotData[0],robotData[1]+1, scentedGrid)) {
+            if (robotData[2] === 'N' && !verifyIfOutOfBounds(robotData[0],robotData[1]+1, gridLimits) && !verifyIfRobotLostInCoordinates(robotData[0],robotData[1]+1, scentedGrid)) {
                 robotData[1]++;
 
 
 
-            } else if (robotData[2] === 'S' && !verifyIfOutOfBounds(robotData[0],robotData[1]-1, gridLimits)  && verifyScentedCoordinates(robotData[0],robotData[1]-1, scentedGrid)) {
+            } else if (robotData[2] === 'S' && !verifyIfOutOfBounds(robotData[0],robotData[1]-1, gridLimits)  && !verifyIfRobotLostInCoordinates(robotData[0],robotData[1]-1, scentedGrid)) {
                 robotData[1]--;
 
 
-            } else if (robotData[2] === 'E' && !verifyIfOutOfBounds(robotData[0]+1,robotData[1], gridLimits)  && verifyScentedCoordinates(robotData[0]+1,robotData[1], scentedGrid)) {
+            } else if (robotData[2] === 'E' && !verifyIfOutOfBounds(robotData[0]+1,robotData[1], gridLimits)  && !verifyIfRobotLostInCoordinates(robotData[0]+1,robotData[1], scentedGrid)) {
                 robotData[0]++;
 
 
-            } else if(robotData[2] === 'W' && !verifyIfOutOfBounds(robotData[0]-1,robotData[1], gridLimits)  && verifyScentedCoordinates(robotData[0]-1,robotData[1], scentedGrid)) {
+            } else if(robotData[2] === 'W' && !verifyIfOutOfBounds(robotData[0]-1,robotData[1], gridLimits)  && !verifyIfRobotLostInCoordinates(robotData[0]-1,robotData[1], scentedGrid)) {
 
                 robotData[0]--;
 
@@ -99,18 +106,28 @@ function computeRobot(robotData, instructions, gridLimits) {
 
         const {nextX, nextY} = nextStep(robotData[0], robotData[1], instructions[i+1])
 
-        if (lost && !verifyScentedCoordinates(nextX,nextY,scentedGrid)){
+        if (lost && verifyIfRobotLostInCoordinates(nextX,nextY,scentedGrid)){
             console.log(`${robotData} LOST`);
             return robotData;
         }
     }
-    console.log(`${robotData}`);
+    //console.log(`${robotData}`);
     return robotData;
 
 }
 
-computeRobot(robotData,instructions,gridLimits);
+//computeRobot(robotData,instructions,gridLimits);
 
 
 
 
+const tusmuertos = [{ robotData: [1, 1, 'E'], instructions: 'RFRFRFRF'}, {robotData: [3, 2, 'N'], instructions: 'FRRFLLFFRRFLL'}, {robotData: [0, 3, 'W'], instructions: 'LLFFFLFLFL'}]
+
+tusmuertos.forEach(ex => {
+    const instructionsArray = ex.instructions.split('');
+    const lastPosition =  computeRobot(ex.robotData, instructionsArray, gridLimits);
+    console.log(lastPosition)
+    console.log(scentedGrid)
+
+
+})
