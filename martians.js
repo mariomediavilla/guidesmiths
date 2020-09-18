@@ -121,9 +121,9 @@ function computeRobot(robotData, instructions, gridLimits) {
 
 
 
-const tusmuertos = [{ robotData: [1, 1, 'E'], instructions: 'RFRFRFRF'}, {robotData: [3, 2, 'N'], instructions: 'FRRFLLFFRRFLL'}, {robotData: [0, 3, 'W'], instructions: 'LLFFFLFLFL'}]
+const execution = [{ robotData: [1, 1, 'E'], instructions: 'RFRFRFRF'}, {robotData: [3, 2, 'N'], instructions: 'FRRFLLFFRRFLL'}, {robotData: [0, 3, 'W'], instructions: 'LLFFFLFLFL'}]
 
-tusmuertos.forEach(ex => {
+execution.forEach(ex => {
     const instructionsArray = ex.instructions.split('');
     const lastPosition =  computeRobot(ex.robotData, instructionsArray, gridLimits);
     console.log(lastPosition)
