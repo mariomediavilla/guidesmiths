@@ -1,6 +1,4 @@
 
-
-
 function setRobotLostInCoordinates(x, y, array) {
     array.push([x, y]);
 }
@@ -17,8 +15,6 @@ function verifyIfRobotLostInCoordinates(x,y, array){
 function verifyIfOutOfBounds(positionX, positionY, gridLimits) {
     return positionX > gridLimits[0] || positionY > gridLimits[1] || positionX < 0 || positionY < 0;
 }
-
-
 
 const directionsToAngle = {
     N: 0,
@@ -46,7 +42,7 @@ function nextStep(posX, posY, orientation){
     return { posX, posY };
 }
 
-function computeRobot(robotData, instructions, gridLimits) {
+function computeRobot(robotData, instructions, gridLimits, lostRobotsCoordinates) {
     let angleRobot = directionsToAngle[robotData[2]];
 
     for (let i = 0; i < instructions.length; i++) {
@@ -63,7 +59,6 @@ function computeRobot(robotData, instructions, gridLimits) {
                 robotData[1] = nextPosition.posY;
             }
 
-
         } else if (instructions[i] === 'R') {
             angleRobot += 90;
 
@@ -72,34 +67,13 @@ function computeRobot(robotData, instructions, gridLimits) {
 
         }
 
-
-
-
-
         angleRobot = angleRobot < 0 ? (angleRobot % 360) + 360 : angleRobot % 360;
         robotData[2] = anglesToDirection[angleRobot]
-
-
-
     }
     console.log(`${robotData} `);
-
     return robotData;
-
 }
 
-
-
-
-
-var lostRobotsCoordinates = []
-gridLimits = [5,3];
-
-const execution = [{ robotData: [1, 1, 'E'], instructions: 'RFRFRFRF'}, {robotData: [3, 2, 'N'], instructions: 'FRRFLLFFRRFLL'}, {robotData: [0, 3, 'W'], instructions: 'LLFFFLFLFL'}]
-
-execution.forEach(ex => {
-    const instructionsArray = ex.instructions.split('');
-    computeRobot(ex.robotData, instructionsArray, gridLimits);
-
-
-})
+module.exports = {
+    computeRobot
+}

@@ -11,8 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03d6cabd-cd1f-4127-aca1-5b58f36c29ce" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/martians.js" beforeDir="false" afterPath="$PROJECT_DIR$/martians.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,21 +44,36 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.4.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.12.56" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Mocha.test.js">
     <configuration name="martians.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/martians.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="test.js" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/test.js</test-file>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.test.js" />
         <item itemvalue="Node.js.martians.js" />
       </list>
     </recent_temporary>
@@ -71,7 +88,7 @@
       <updated>1599749010812</updated>
       <workItem from="1599749012438" duration="1957000" />
       <workItem from="1599924560547" duration="60691000" />
-      <workItem from="1600440190810" duration="6603000" />
+      <workItem from="1600440190810" duration="8346000" />
     </task>
     <task id="LOCAL-00001" summary="prueba">
       <created>1599749417738</created>
@@ -171,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600442105749</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="reestructuracion final">
+      <created>1600517791870</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1600517791870</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,7 +226,8 @@
     <MESSAGE value="fin" />
     <MESSAGE value="definitivo" />
     <MESSAGE value="committ" />
-    <option name="LAST_COMMIT_MESSAGE" value="committ" />
+    <MESSAGE value="reestructuracion final" />
+    <option name="LAST_COMMIT_MESSAGE" value="reestructuracion final" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1073" y="325" key="#Web_Browsers" timestamp="1600252177363">
@@ -213,9 +238,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="849" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1599998704411" />
-    <state x="1003" y="155" key="CommitChangelistDialog2" timestamp="1600442105321">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="592" y="51" key="CommitChangelistDialog2" timestamp="1600517791694">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="592" y="51" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1600517791694" />
     <state x="1003" y="155" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1600442105321" />
     <state x="1003" y="165" key="CommitChangelistDialog2/0.23.1920.991@0.23.1920.991" timestamp="1599924589719" />
     <state x="129" y="105" width="1698" height="679" key="DiffContextDialog" timestamp="1600248192225">
@@ -226,28 +252,28 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1123" y="444" key="Github.ShareDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1600252128856" />
-    <state width="1419" height="193" key="GridCell.Tab.0.bottom" timestamp="1600517574285">
+    <state width="1419" height="439" key="GridCell.Tab.0.bottom" timestamp="1600525194135">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="193" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1600517574285" />
+    <state width="1419" height="439" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1600525194135" />
     <state width="1144" height="364" key="GridCell.Tab.0.bottom/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1600087827591" />
     <state width="1899" height="409" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1600441442999" />
-    <state width="1419" height="193" key="GridCell.Tab.0.center" timestamp="1600517574284">
+    <state width="1419" height="439" key="GridCell.Tab.0.center" timestamp="1600525194134">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="193" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1600517574284" />
+    <state width="1419" height="439" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1600525194134" />
     <state width="1144" height="364" key="GridCell.Tab.0.center/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1600087827589" />
     <state width="1899" height="409" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1600441442998" />
-    <state width="1419" height="193" key="GridCell.Tab.0.left" timestamp="1600517574284">
+    <state width="1419" height="439" key="GridCell.Tab.0.left" timestamp="1600525194133">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="193" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1600517574284" />
+    <state width="1419" height="439" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1600525194133" />
     <state width="1144" height="364" key="GridCell.Tab.0.left/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1600087827589" />
     <state width="1899" height="409" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1600441442998" />
-    <state width="1419" height="193" key="GridCell.Tab.0.right" timestamp="1600517574285">
+    <state width="1419" height="439" key="GridCell.Tab.0.right" timestamp="1600525194134">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="193" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1600517574285" />
+    <state width="1419" height="439" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1600525194134" />
     <state width="1144" height="364" key="GridCell.Tab.0.right/0.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1600087827590" />
     <state width="1899" height="409" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1600441442998" />
     <state width="1194" height="376" key="GridCell.Tab.1.bottom" timestamp="1600253575961">
@@ -302,9 +328,10 @@
       <screen x="0" y="23" width="1920" height="991" />
     </state>
     <state x="1262" y="226" key="RollbackChangesDialog/0.23.1920.991@0.23.1920.991" timestamp="1599757756053" />
-    <state x="608" y="179" key="SettingsEditor" timestamp="1600250189903">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="192" y="135" key="SettingsEditor" timestamp="1600524040381">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="192" y="135" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600524040381" />
     <state x="608" y="179" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1600250189903" />
     <state x="608" y="187" key="SettingsEditor/0.23.1920.991@0.23.1920.991" timestamp="1599750001066" />
     <state x="891" y="244" key="Vcs.Push.Dialog.v2" timestamp="1600014256904">
